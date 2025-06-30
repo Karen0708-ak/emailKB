@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: emailkb
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn emailKB.wsgi"
+    staticPublishPath: staticfiles
